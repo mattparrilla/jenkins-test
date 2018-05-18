@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        readFile 'version.cmake'
-        sh 'echo "test"'
+        sh 'git branch'
       }
     }
   }
