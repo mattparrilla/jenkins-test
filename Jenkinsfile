@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Version') {
       steps {
-        sh '''new_version = $(git diff origin/master:version.cmake version.cmake)
-if [ -z "$new_version" ]
+        sh '''if [ -z "$(git diff origin/master:version.cmake version.cmake)" ]
 then
       return 1
 else
